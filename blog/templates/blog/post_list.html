@@ -3,19 +3,23 @@
 <title>El blog de Luis</title>
     <body>
         <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
+
+             <h1><a href="/">Luis Blog</a></h1>
         </div>
 
         <div>
-            <p>published: 12.11.2019, 04:45</p>
-            <h2><a href="">El primer post</a></h2>
-            <p>Hola xd</p>
+            {% for post in posts %}
+          <p> publicado: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
         </div>
+        {% endfor %}
 
         <div>
-            <p>published: 12.11.2019, 04:46</p>
+
+            <!-- <p>published: 12.11.2019, 04:46</p>
             <h2><a href="">El segundo blog</a></h2>
-            <p>Hola 2 xd</p>
+            <p>Hola 2 xd</p> -->
         </div>
     </body>
 </html>
